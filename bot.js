@@ -127,7 +127,7 @@ client.on('message', async msg => {
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 
-					.setFooter("Speed Bot")
+					.setFooter("SXC Bot")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 					
 					try {
@@ -322,6 +322,7 @@ client.on("message", message => {
 『=animal / يعطيك صور حيوانات』
 『=image / يعرض صوره السيرفر』
 『=avatar / يعرض صورتك او صوره شخص』
+
 **
 
         ***__Bot orders__***
