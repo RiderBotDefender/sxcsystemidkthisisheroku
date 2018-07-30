@@ -1174,7 +1174,6 @@ if (command == "embed") {
 
 //اوامر اداريه//
 
-const fs = require('fs');
 
 var user = {};
 var warn = {};
