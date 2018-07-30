@@ -395,6 +395,8 @@ client.on("message", message => {
 『=يخيرك بين شي وشي / لو خيروك』
 『=يعطيك عقاب و لازم تنفذه / عقاب』
 『=لعبه اسئله / كت تويت』
+
+created by Im_A7mad_XD
 **
         
 `)
@@ -732,7 +734,6 @@ const zead = [
 
 
 
-            var prefix = "=";
 client.on('message', message => {
          if (message.content === prefix + "dt") {
          if (!message.channel.guild) return message.reply('** This command only for servers **');  
