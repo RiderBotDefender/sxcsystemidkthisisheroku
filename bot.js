@@ -96,7 +96,6 @@ client.on('ready', function() {
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
 */
 var servers = [];
-var queue = [];
 var guilds = [];
 var queueNames = [];
 var isPlaying = false;
