@@ -1,5 +1,29 @@
-//const Discord = require("discord.js");
-const client = new Discord.Client();
+const Discord = require('discord.js');
+const db = require('quick.db');
+const client = new Discord.Client();   
+const giphy = require('giphy-api')();    
+const googl = require('goo.gl');  
+const translate = require('google-translate-api');   
+const fs = require("fs"); 
+const getYoutubeID = require('get-youtube-id'); 
+const moment = require("moment");  
+const { Client, Util } = require('discord.js');  
+const UserBlocked = new Set(); 
+const jimp = require('jimp');   
+const math = require('math-expression-evaluator'); 
+const stripIndents = require('common-tags').stripIndents;
+const figlet = require('figlet');
+const google = require('google-it'); 
+const queue = new Map(); 
+const zalgo = require('zalgolize');   
+const fetchVideoInfo = require('youtube-info');
+const YouTube = require('simple-youtube-api');
+const ytdl = require('ytdl-core');
+const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
+const sql = require("sqlite");
+ const dateFormat = require('dateformat'); 
+ const pretty = require('pretty-ms') 
+
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -25,6 +49,35 @@ let welcomer = member.guild.channels.find("name","『welcome』");
       }
       });
 
+client.on('message', message => {
+	var prefix = "=";
+if (message.content.startsWith(prefix + 'tag')) {
+    let args = message.content.split(" ").slice(1);
+if(!args[0]) return message.reply('مرجو كتابة نص الدي تريد');  
+
+    figlet(args.join(" "), (err, data) => {
+              message.channel.send("```" + data + "```")
+           })
+}
+});
+
+
+var AsciiTable = require('ascii-data-table').default
+client.on('message', message =>{
+
+    if(message.content == "=roles"){
+        var 
+        ros=message.guild.roles.size,
+        data = [['Rank', 'RoleName']]
+        for(let i =0;i<ros;i++){
+            if(message.guild.roles.array()[i].id !== message.guild.id){
+         data.push([i,`${message.guild.roles.filter(r => r.position == ros-i).map(r=>r.name)}`])
+        }}
+        let res = AsciiTable.table(data)
+
+        message.channel.send(`**\`\`\`xl\n${res}\`\`\`**`);
+    }
+});
 
 //music//
 
